@@ -1,0 +1,68 @@
+import java.util.*;
+class Node {
+    int data;  
+    Node next; 
+    public Node(int data) {
+        this.data = data;
+        this.next = null;
+    }
+}
+class Singlylinkedlist {
+    Node head; 
+    public Singlylinkedlist() {
+        this.head = null;
+    }
+
+    
+    public void append(int data) {
+        Node newNode = new Node(data); 
+
+        if (head == null) {
+            head = newNode; 
+        } else {
+            Node temp = head;
+            while (temp.next != null) { 
+                temp = temp.next;
+            }
+            temp.next = newNode; 
+        }
+    }
+
+    
+    public void display() {
+        Node current = head;
+        while (current != null) {
+            System.out.print(current.data + " -> ");
+            current = current.next;
+        }
+        System.out.println("null"); 
+    }
+    public static void main(String[] args) {
+        Singlylinkedlist list = new Singlylinkedlist(); 
+        Scanner sc=new Scanner(System.in);
+        int count1=0,count2=0;
+        System.out.println("enter length of list 1:");
+        int n=sc.nextInt();
+        while(n-->0){
+            count1++;
+        System.out.println("enter data:");
+        int num=sc.nextInt();
+        list.append(num);
+        
+}
+        System.out.println("enter length of list 2:");
+        int m=sc.nextInt();
+        while(m-->0){
+            count2++;
+        System.out.println("enter data:");
+        int num=sc.nextInt();
+        list.append(num);
+        
+}      if(count1==count2){
+        System.out.println("1");
+}
+        else{
+              System.out.println("0");
+        } 
+    }
+}
